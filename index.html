@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Raghu Lamay</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #dc2626;
+    --blue-light: #fff1f2;
+    --blue-mid: #fecdd3;
+    --text: #111;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --white: #fff;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.7; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.1rem 2.5rem;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 999;
+  }
+  .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--text); letter-spacing: -0.3px; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--blue); }
+
+  /* SECTIONS */
+  section { max-width: 740px; margin: 0 auto; padding: 6rem 1.5rem; }
+
+  /* HERO */
+  #hero { padding-top: 9rem; display: flex; flex-direction: column; align-items: flex-start; }
+  .hero-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+  .hero-name { font-family: 'DM Serif Display', serif; font-size: clamp(2.8rem, 6vw, 4.2rem); line-height: 1.1; color: var(--text); margin-bottom: 1rem; }
+  .hero-tagline { font-size: 1.05rem; color: var(--muted); max-width: 520px; margin-bottom: 2rem; }
+  .hero-cta {
+    display: inline-block; padding: .65rem 1.6rem;
+    background: var(--blue); color: #fff;
+    font-size: .88rem; font-weight: 500;
+    border-radius: 999px; text-decoration: none;
+    transition: background .2s;
+  }
+  .hero-cta:hover { background: #b91c1c; }
+  .hero-dots { display: flex; gap: .4rem; margin-top: 3rem; }
+  .hero-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--blue-mid); }
+  .hero-dots span:first-child { background: var(--blue); }
+
+  /* SECTION HEADERS */
+  .sec-label { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue); margin-bottom: .5rem; }
+  .sec-title { font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--text); margin-bottom: .6rem; }
+  .sec-line { width: 36px; height: 2px; background: var(--blue); border-radius: 2px; margin-bottom: 2rem; }
+
+  /* ABOUT */
+  .about-text { font-size: .97rem; color: #444; line-height: 1.9; max-width: 620px; }
+
+  /* SKILLS */
+  .skills-wrap { display: flex; flex-wrap: wrap; gap: .55rem; }
+  .skill {
+    padding: .4rem 1rem; border-radius: 999px;
+    font-size: .8rem; font-weight: 500;
+    background: var(--blue-light); color: #b91c1c;
+    border: 1px solid var(--blue-mid);
+    transition: background .15s, transform .15s;
+  }
+  .skill:hover { background: #ffe4e6; transform: translateY(-1px); }
+
+  /* CONTACT */
+  .contact-cards { display: flex; flex-direction: column; gap: .9rem; }
+  .contact-card {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border); border-radius: 14px;
+    text-decoration: none; color: inherit;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .contact-card:hover { border-color: var(--blue-mid); box-shadow: 0 2px 12px #2563eb0f; }
+  .cc-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    background: var(--blue-light); display: flex;
+    align-items: center; justify-content: center; font-size: 19px; flex-shrink: 0;
+  }
+  .cc-label { font-size: .88rem; font-weight: 600; color: var(--text); }
+  .cc-val { font-size: .78rem; color: var(--muted); }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem 1rem;
+    border-top: 1px solid var(--border);
+    font-size: .78rem; color: #bbb;
+  }
+
+  /* DIVIDER between sections */
+  .sec-divider { max-width: 740px; margin: 0 auto; border: none; border-top: 1px solid var(--border); }
+
+  @media (max-width: 600px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links { gap: 1.2rem; }
+    section { padding: 4rem 1.2rem; }
+    #hero { padding-top: 7rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">Raghu Lamay</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <p class="hero-eyebrow">Welcome</p>
+  <h1 class="hero-name">Raghu<br/>Lamay</h1>
+  <p class="hero-tagline">Computer Science Student &nbsp;·&nbsp; AI &amp; Data Science Enthusiast.<br/>Building impactful solutions through code and curiosity.</p>
+  <a class="hero-cta" href="#contact">Get in touch</a>
+  <div class="hero-dots">
+    <span></span><span></span><span></span><span></span>
+  </div>
+</section>
+
+<hr class="sec-divider"/>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="sec-label">Introduction</p>
+  <h2 class="sec-title">About Me</h2>
+  <div class="sec-line"></div>
+  <p class="about-text">Hello! I'm Raghu Lamay, a Computer Science student passionate about Artificial Intelligence, Data Science, and software development. I enjoy solving real-world problems through technology, participating in hackathons, and continuously learning new skills. My goal is to build impactful AI-powered solutions that make a difference.</p>
+</section>
+
+<hr class="sec-divider"/>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="sec-label">What I work with</p>
+  <h2 class="sec-title">Skills</h2>
+  <div class="sec-line"></div>
+  <div class="skills-wrap">
+    <span class="skill">Python</span>
+    <span class="skill">C++</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">Artificial Intelligence</span>
+    <span class="skill">Data Analysis</span>
+    <span class="skill">SQL</span>
+    <span class="skill">Git &amp; GitHub</span>
+    <span class="skill">Microsoft Excel</span>
+    <span class="skill">Problem Solving</span>
+  </div>
+</section>
+
+<hr class="sec-divider"/>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="sec-label">Get in touch</p>
+  <h2 class="sec-title">Contact</h2>
+  <div class="sec-line"></div>
+  <div class="contact-cards">
+    <a class="contact-card" href="mailto:whoamig11@gmail.com">
+      <div class="cc-icon">✉️</div>
+      <div>
+        <p class="cc-label">Email</p>
+        <p class="cc-val">whoamig11@gmail.com</p>
+      </div>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/raghu-lamay-8034a7357" target="_blank">
+      <div class="cc-icon">💼</div>
+      <div>
+        <p class="cc-label">LinkedIn</p>
+        <p class="cc-val">linkedin.com/in/raghu-lamay-8034a7357</p>
+      </div>
+    </a>
+    <a class="contact-card" href="https://github.com/Raghu2947" target="_blank">
+      <div class="cc-icon">🐙</div>
+      <div>
+        <p class="cc-label">GitHub</p>
+        <p class="cc-val">github.com/Raghu2947</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>© 2025 Raghu Lamay · Made with ♥</footer>
+
+</body>
+</html>
